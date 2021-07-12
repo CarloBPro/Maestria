@@ -33,14 +33,14 @@ d3.csv('pokemon.csv').then(data => {
     d.Defense = +d.Defense
   })
   data = data.filter(d => {
-    return d.TotalS > 450 }).sort((a,b)=> {
+    return d.TotalS > 500 }).sort((a,b)=> {
       return d3.descending(a.TotalS, b.TotalS)}).filter(d => {
         return d.Legendary != 'True' } )
 
   console.log(data)
 
 
-  allData = data.slice(0, 15)
+  allData = data.slice(0, 150)
   console.log(allData)
 
   render(allData)
@@ -147,34 +147,3 @@ function render(data) {
                           
 }
 
-
-
-
-function Cfilter(data){
-
-let unselectedIds =[];
-
-const listItems = d3
-  .select('#graf')
-  .select('ul')
-  .selectAll('li')
-  .data(allData)
-  .enter()
-  .append('li');
-
-  listItems.append('span').data(d => d.Type1);
-
-  listItems
-    .append('input')
-    .attr('type','checkbox')
-    .attr('check',true)
-    .on('change',d => {
-      if (unselectedIds.indexOf(d.Type1) === -1) {
-        unselectedIds.push(d.Type1)
-      }else{
-        unselectedIds =unselectedIds.filter(d => d.Type1 !== d.Type1)
-      }
-      selectedData = allData.filter
-    })
-    
-}
