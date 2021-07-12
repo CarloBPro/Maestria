@@ -130,8 +130,8 @@ function render(data) {
         .attr('fill', 'black')
 
         .transition()
-        .duration(2000)
-      .ease(d3.easeBounce)
+        .duration(4000)
+      .ease(d3.easeCubicOut)
         .attr('y', d => y(d.TotalS))
         .attr('fill', d => color(d.Type1))
         .attr('height', d => alto - y(d.TotalS))
