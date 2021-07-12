@@ -32,9 +32,15 @@ d3.csv('pokemon.csv').then(data => {
     d.Attack = +d.Attack
     d.Defense = +d.Defense
   })
+  data = data.filter(d => {
+    return d.TotalS > 450 }).sort((a,b)=> {
+      return d3.descending(a.TotalS, b.TotalS)}).filter(d => {
+        return d.Legendary != 'True' } )
+
   console.log(data)
 
-  allData = data.slice(0, 9)
+
+  allData = data.slice(0, 15)
   console.log(allData)
 
   render(allData)
@@ -140,6 +146,8 @@ function render(data) {
         .text('Pokemon Stats')
                           
 }
+
+
 
 
 function Cfilter(data){
