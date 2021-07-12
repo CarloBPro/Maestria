@@ -9,7 +9,7 @@ const svg = graf
   .attr('class', 'graf')
 
 const margin = {
-  top: 100,
+  top: 50,
   bottom: 250,
   left: 150,
   right: 50,
@@ -54,7 +54,7 @@ function labels(data){
 
 
   let y = d3.scaleLinear()
-  .domain([0, d3.max(data, d => d.TotalS)+50])
+  .domain([0, d3.max(data, d => d.TotalS)+75])
   .range([alto, 0])
 
   let x = d3.scaleBand()
@@ -70,7 +70,7 @@ label
     .attr("class","label")
     .text(d => d.TotalS)
     .attr('x', d => x(d.Num)+ x.bandwidth()/2)
-    .attr('y', d => y(d.TotalS) -10)
+    .attr('y', d => y(d.TotalS) -15)
     .attr('text-anchor', 'middle')
     .attr('font-size',15)
     .attr('fill','black')
