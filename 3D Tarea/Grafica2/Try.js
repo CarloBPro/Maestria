@@ -2,6 +2,7 @@ const graf = d3.select('#graf')
 const anchoTotal = graf.style('width').slice(0, -2)
 const altoTotal = (anchoTotal * 9) / 16
 
+const selectCheck = d3.select('#Legen')
 const selectVar = d3.select('#variable')
 const selectNum = d3.select('#numero')
 const selectStat = d3.select('#Status')
@@ -31,6 +32,7 @@ let allData = []
 let txtAtr = 'TotalS'
 let NumP = 50
 let StatP = 0
+let CheckL = 'True'
 
 
 let y = d3.scaleLinear()
@@ -61,7 +63,7 @@ d3.csv('pokemon.csv').then(data => {
   })
   data = data.filter(d => {
    return d.TotalS > 200}).filter(d => {
-      return d.Legendary != 'True' } )
+      return d.Legendary != CheckL } )
 
   console.log(data)
 
@@ -113,7 +115,7 @@ function render(data) {
 
 data = data.filter(d => {
   return d[txtAtr] > StatP}).filter(d => {
-    return d.Legendary != 'True' } ).slice(0,NumP)
+    return d.Legendary != CheckL } ).slice(0,NumP)
 
   let Circle  = g.selectAll('circle').data(data)
 
@@ -204,4 +206,9 @@ selectNum.on('change', () => {
 selectStat.on('change', () => {
   StatP = selectStat.node().value
   render(allData.slice(0,NumP))
+})
+
+selectCheck.on('change', () => {
+  CheckL = selectCheck.node().value
+  render(allData)
 })
