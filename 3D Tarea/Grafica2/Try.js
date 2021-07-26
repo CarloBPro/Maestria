@@ -86,31 +86,26 @@ function labels(data){
   let label = g.selectAll('label').data(data)
 
 
-  let y = d3.scaleLinear()
-  .domain([0, d3.max(data, d => d[txtAtr])])
-  .range([alto, 0])
-
-  let x = d3.scaleBand()
-  .domain(data.map(d => d.type))
-  .range([0, ancho])
-  .paddingInner(0.2)
-  .paddingOuter(0.5)
+  y.domain([0, d3.max(data, d => d[txtAtr])])
+  x.domain(data.map(d => d.Type1))
 
 
 
 label
-    .enter()
-    .append("text")
-    .attr("class","label")
-    .text(d3.mean(data, d => y(d[txtAtr])))
-    .attr('x', d => x(d.Type1)+ x.bandwidth()/2)
-    .attr('y', d => y(d[txtAtr]) -15)
-    .attr('text-anchor', 'middle')
-    .attr('font-size',15)
-    .attr('fill','black')
-    .classed('label',true);
+.enter()
+  .append("text")
+  .attr("class","label")
+  .text(d => d.TotalS)
+  .attr('x', d => x(d.Num)+ x.bandwidth()/2)
+  .attr('y', d => y(d.TotalS) -15)
+  .attr('text-anchor', 'middle')
+  .attr('font-size',15)
+  .attr('fill','black')
+  .classed('label',true);
 
 }
+
+
 function render(data) {
 
 data = data.filter(d => {
