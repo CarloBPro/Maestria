@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <title>Gapminder</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' referrerpolicy='no-referrer'/>
+    <link rel='stylesheet' href='/css/styles.css'/>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <div class='container-fluid mt-4'>
+      <div class='row'>
+        <div class='col-6'>
+          <button class='btn btn-secondary' id='btn-atras'>
+            <i class='fas fa-undo'></i>
+          </button>
+          <button class='btn btn-success' id='btn-play'>
+            <i class='fas fa-play'></i>
+          </button>
+          <button class='btn btn-secondary' id='btn-adelante'>
+            <i class='fas fa-redo'></i>
+          </button>
+              <input class="form-control" list="datalistOptions" id="EstadoMX" placeholder="Type to search...">
+              <datalist id="datalistOptions">
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Coahuila">Coahuila</option>
+                <option value="Colima">Colima</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                <option value="Durango">Durango</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Michoacan">Michoacan</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo Leon">Nuevo Leon</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Queretaro">Queretaro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosi">San Luis Potosi</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Yucatan">Yucatan</option>
+                <option value="Zacatecas">Zacatecas</option>
+                
+              </datalist>
+
+          <select id="RegionMX" class="form-control">
+            <option value="1">Norte</option>
+            <option value="3">Centro-norte</option>
+            <option value="2">Norte-occidente</option>
+            <option value="4">Centro</option>
+            <option value="5">Sur</option>
+          </select>
+        </div>
+        <div class='col-6'>
+          <input type='number' id='txt-year' class='form-control'/>
+        </div>
+        <div class='col-12 mt-4' id='graf'></div>
+      </div>
+    </div>
+
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js' referrerpolicy='no-referrer'></script>
+    <script src='app.js'></script>
+  </body>
+</html>
